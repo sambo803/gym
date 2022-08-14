@@ -3,3 +3,20 @@ GET http://localhost:3000/workouts.json
 
 ### post workouts create
 POST http://localhost:3000/workouts.json
+Content-Type: application/json
+
+{
+  "activity": "wind-mills",
+  "tools_needed": "floor, body",
+  "reps": "200 to do any good"
+}
+
+### get workouts show
+GET http://localhost:3000/workouts/6.json
+### patch workouts update
+PATCH http://localhost:3000/workouts/6.json
+Content-Type: application/json
+
+{
+  "tools_needed": "floor and yo body"
+}

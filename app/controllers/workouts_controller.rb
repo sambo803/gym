@@ -6,10 +6,27 @@ class WorkoutsController < ApplicationController
 
   def create
     workout = Workout.new(
-      action: "burpees",
-      reps: "3 x 15",
+      activity: params[:activity],
+      tools_needed: params[:tools_needed],
+      reps: params[:reps],
+      image_url: params[:image_url],
     )
     workout.save
     render json: workout.as_json
+  end
+
+  def show
+    workout = Workout.find_by(id: params[:id])
+    render json: workout.as_json
+  end
+
+  def update
+    workout = Workout.find_by(id: params[:id])
+    workout.activity = params[:activity] || workout.activity
+    workout.tools_needed = params[:tools_needed] || workout.tools_needed
+    workout.reps = params[:reps] || workout.reps
+    workout.image_url = params[:image_url] || workout.image_url
+    workout.save
+    render json = workout.as_json
   end
 end
