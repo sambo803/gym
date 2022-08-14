@@ -20,3 +20,5 @@ Content-Type: application/json
 {
   "tools_needed": "floor and yo body"
 }
+### delete workouts destroy
+DELETE http://localhost:3000/workouts/3.json

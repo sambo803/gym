@@ -29,4 +29,10 @@ class WorkoutsController < ApplicationController
     workout.save
     render json = workout.as_json
   end
+
+  def destroy
+    workout = Workout.find_by(id: params[:id])
+    workout.destroy
+    render json: { message: "workout has been destroyed" }
+  end
 end
