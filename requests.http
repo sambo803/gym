@@ -1,0 +1,5 @@
+### get workouts index
+GET http://localhost:3000/workouts.json
+
+### post workouts create
+POST http://localhost:3000/workouts.json
